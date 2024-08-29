@@ -2,7 +2,7 @@ import { createBot, createFlow, MemoryDB, addKeyword, createProvider } from '@bo
 import { BaileysProvider, handleCtx } from '@bot-whatsapp/provider-baileys';
 
 const flowBienvenida = addKeyword('hola');
-console.log('el token es',process.env.TOKEN_VAL)
+
 const main = async () => {
     // Crea una instancia del proveedor en lugar de usar createProvider
     const provider = createProvider(BaileysProvider);
@@ -20,7 +20,7 @@ const main = async () => {
         const number = body.phoneNumber
         const message = body.message
         
-        const authorzationHeader = 'IJyKJI8qunYei6Z2fUqwMMMZ5f2Q9wamnEOOv2nb9vouc18u1bGvkZRiBANjGYi73WzRyymkhzXL9velolILlwiWogpRnSpgeX3U'
+        const authorzationHeader = process.env.TOKEN_VAL
         
         if (!auth) {
             res.end(JSON.stringify({ status:402, message: 'No se ha enviado token' }));
