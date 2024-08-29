@@ -2,7 +2,7 @@ import { createBot, createFlow, MemoryDB, addKeyword, createProvider } from '@bo
 import { BaileysProvider, handleCtx } from '@bot-whatsapp/provider-baileys';
 
 const flowBienvenida = addKeyword('hola');
-
+console.log(process.env.TOKEN_VAL)
 const main = async () => {
     // Crea una instancia del proveedor en lugar de usar createProvider
     const provider = createProvider(BaileysProvider);
