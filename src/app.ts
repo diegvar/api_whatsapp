@@ -21,7 +21,7 @@ const main = async () => {
         const message = body.message
         
         const authorzationHeader = process.env.TOKEN_VAL
-        
+        console.log(authorzationHeader)
         if (!auth) {
             res.end(JSON.stringify({ status:402, message: 'No se ha enviado token' }));
             return;
