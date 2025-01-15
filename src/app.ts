@@ -27,6 +27,7 @@ const main = async () => {
             return;
         } else if (auth!=authorzationHeader) {
             res.end(JSON.stringify({status:403, message: 'Token enviado no tiene autorizacion'}));
+            console.log(authorzationHeader)
             return;
         } else {
             await bot.sendMessage(number, message, []);
