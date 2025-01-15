@@ -1,6 +1,7 @@
 import { createBot, createFlow, MemoryDB, addKeyword, createProvider } from '@bot-whatsapp/bot';
 import { BaileysProvider, handleCtx } from '@bot-whatsapp/provider-baileys';
-require('dotenv').config()
+import dotenv from 'dotenv';
+dotenv.config();
 const flowBienvenida = addKeyword('hola');
 
 const main = async () => {
