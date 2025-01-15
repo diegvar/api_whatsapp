@@ -27,8 +27,7 @@ const main = async () => {
             res.end(JSON.stringify({ status:402, message: 'No se ha enviado token' }));
             return;
         } else if (auth!=authorzationHeader) {
-            res.end(JSON.stringify({status:403, message: authorzationHeader}));
-            
+            res.end(JSON.stringify({status:403, message: 'El token enviado no tiene autorización'}));
             return;
         } else {
             await bot.sendMessage(number, message, []);
